@@ -13,6 +13,8 @@ movies = json_parsed["results"]
 movies.each do |movie|
   title = movie["title"]
   overview = movie["overview"]
-  Movie.create!(title: title, overview: overview)
+  poster_url = movie["poster_path"]
+  poster_path = "https://image.tmdb.org/t/p/w500/#{poster_url}"
+  Movie.create!(title: title, overview: overview, poster_url: poster_path)
 end
 

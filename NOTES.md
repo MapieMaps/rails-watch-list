@@ -34,5 +34,22 @@ rspec spec/models
   validates :comment, presence: true, length: { minimum: 6 }
   validates :movie_id, uniqueness: { scope: :list }
 
+# Routes
+  - List
+  get '/lists', to: 'lists#index'
+  post '/lists', to: 'lists#create'
+  get '/lists/new', to: 'lists#new', as: :new_list
+  get '/lists/:id', to: 'lists#show', as: :list
+
+
+
+
+
+# Controllers
+  - List
+  rails generate controller Lists index create new show
+
+
+
 
 
