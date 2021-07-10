@@ -11,15 +11,28 @@ rspec spec/models
 
 
 # Validation
+
 - Movie
 
-  validates :title, uniqueness: true
+  has_many :bookmarks
+
+  validates :title, uniqueness: true, presence: true
+  validates :overview, presence: true
 
 - List
-  validates :name, uniqueness: true
+
+  has_many :bookmarks
+  has_many :movies, through: :bookmarks, dependent: :destroy
+
+  validates :name, uniqueness: true, presence: true
 
 - Bookmark
-  validates
+
+  belongs_to :movie
+  belongs_to :list
+
+  validates :comment, presence: true, length: { minimum: 6 }
+  validates :movie_id, uniqueness: { scope: :list }
 
 
 
