@@ -36,11 +36,13 @@ rspec spec/models
 
 # Routes
   - List
-  get '/lists', to: 'lists#index'
-  post '/lists', to: 'lists#create'
-  get '/lists/new', to: 'lists#new', as: :new_list
-  get '/lists/:id', to: 'lists#show', as: :list
 
+    resources :lists, only: [:index, :create, :new, :show]
+
+     lists GET  /lists(.:format)        lists#index
+           POST /lists(.:format)        lists#create
+  new_list GET  /lists/new(.:format)    lists#new
+      list GET  /lists/:id(.:format)    lists#show
 
 
 
@@ -48,6 +50,8 @@ rspec spec/models
 # Controllers
   - List
   rails generate controller Lists index create new show
+  - Bookmark
+  rails generate controller Bookmarks new create destroy
 
 
 
