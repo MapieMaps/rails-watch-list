@@ -2,9 +2,18 @@
 <p>Find me in app/views/lists/index.html.erb</p>
 <p>Nous avons <%= @lists.count %> listes</p>
 
-<% @lists.each do |list| %>
-  <h5><%= link_to list.name, list %></h5>
-<% end %>
+<div class="container">
+  <div class="row ">
+    <% @lists.each do |list| %>
+      <div class="col-md-4">
+        <div class="list-items" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/collection/39769052/1600x900)">
+          <h5><%= link_to list.name, list %></h5>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 
 
 <%= link_to "Add a new list", new_list_path %>
