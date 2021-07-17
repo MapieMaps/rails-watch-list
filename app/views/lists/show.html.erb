@@ -1,9 +1,9 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/collection/39769052/1600x900)">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/collection/39769052/1000x800)">
   <%= link_to "Back to lists", lists_path, class: "btn btn-link"%>
   <div class="container">
     <p><%= "You haven't saved any movies yet!" if @list.movies.empty? %></p>
     <h1><%= @list.name %></h1>
-    <p><%= @list.movies.count %>films</p>
+    <p><%= @list.movies.count %> films</p>
     <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: "btn btn-flat" %>
   </div>
 </div>
