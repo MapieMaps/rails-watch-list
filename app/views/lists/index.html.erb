@@ -1,12 +1,8 @@
-<h1>Lists#index</h1>
-<p>Find me in app/views/lists/index.html.erb</p>
-<p>Nous avons <%= @lists.count %> listes</p>
-
 <div class="container">
   <div class="row ">
     <% @lists.each do |list| %>
       <div class="col-md-4">
-        <div class="list-items" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/collection/39769052/1600x900)">
+        <div class="list-items" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/400x300/?movie,cinema)">
           <h5><%= link_to list.name, list %></h5>
         </div>
       </div>
@@ -14,7 +10,7 @@
   </div>
 </div>
 
-
-
-<%= link_to "Add a new list", new_list_path %>
+<div class="button-add">
+  <%= link_to "Add a new list", new_list_path, class: "btn btn-flat"  %>
+</div>
 

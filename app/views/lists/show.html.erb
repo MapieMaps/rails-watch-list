@@ -1,8 +1,9 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/collection/39769052/1600x900)">
-  <%= link_to "Back to list", lists_path, class: "btn btn-link"%>
+  <%= link_to "Back to lists", lists_path, class: "btn btn-link"%>
   <div class="container">
     <p><%= "You haven't saved any movies yet!" if @list.movies.empty? %></p>
-    <h1><%= @list.name %></h1><br>
+    <h1><%= @list.name %></h1>
+    <p><%= @list.movies.count %>films</p>
     <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: "btn btn-flat" %>
   </div>
 </div>
@@ -16,10 +17,15 @@
           <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
           <%= image_tag movie.poster_url, alt: "#{movie.title} picture" %><br>
           <div class="card-body">
-            <h3 class="card-title"><%= movie.title %></h3>
+            <h3 class="card-title"><%= movie.title %></h3><p><%= movie.rating %> <i class="fas fa-star star-yellow"></i></p>
             <p><%= movie.overview %></p>
-            <p><i><%= bookmark.comment %></i></p>
-            <%= link_to 'Remove from the list', bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure you want to remove #{movie.title} from your #{@list.name} list"}, class: "btn btn-outline-danger btn-sm" %>
+            <div>
+              <i class="fas fa-quote-left mr-2"></i><small class="flex-grow-1"><i><%= bookmark.comment %></i></small>
+            </div>
+            <div>
+              <br>
+              <%= link_to 'Remove from the list', bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure you want to remove #{movie.title} from your #{@list.name} list"}, class: "btn btn-outline-danger btn-sm" %>
+            </div>
           </div>
         </div>
       </div>

@@ -3,5 +3,24 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .list-items {
+  margin-top: 64px;
+  display: flex;
   height: 33vh;
+  justify-content: center;
+  align-items: center;
+  a {
+  color: white;
+
+  &:hover {
+    opacity: 0.33;
+    text-decoration: none;
+    }
+  }
+}
+
+.button-add {
+  display: flex;
+  height: 33vh;
+  justify-content: center;
+  align-items: center;
 }
