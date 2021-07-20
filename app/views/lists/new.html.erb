@@ -3,6 +3,7 @@
     <div class="col-lg-6 mb-4">
       <%= simple_form_for(@list) do |f| %>
         <%= f.input :name %>
+        <%= f.input :photo, as: :file %>
         <%= f.submit %>
       <% end %>
   </div>
