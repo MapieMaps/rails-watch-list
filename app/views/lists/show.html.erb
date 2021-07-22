@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/collection/39769052/1000x800)">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>')">
   <%= link_to "Back to lists", lists_path, class: "btn btn-link"%>
   <div class="container">
     <p><%= "You haven't saved any movies yet!" if @list.movies.empty? %></p>

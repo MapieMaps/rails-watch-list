@@ -2,11 +2,10 @@
   <div class="row ">
     <% @lists.each do |list| %>
       <div class="col-md-4">
-        <div class="list-items" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/400x300/?movie,cinema)">
-          <h5><%= link_to list.name, list %></h5>
-        </div>
         <% if list.photo.attached? %>
-          <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')">
+            <h2><%= link_to list.name, list %></h2>
+          </div>
         <% end %>
       </div>
     <% end %>

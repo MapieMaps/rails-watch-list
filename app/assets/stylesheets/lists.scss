@@ -2,12 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.list-items {
-  margin-top: 64px;
+.button-add {
   display: flex;
   height: 33vh;
   justify-content: center;
   align-items: center;
+}
+
+.card-category {
+  margin-top: 64px;
+  padding: 32px;
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   a {
   color: white;
 
@@ -16,11 +27,6 @@
     text-decoration: none;
     }
   }
-}
-
-.button-add {
-  display: flex;
-  height: 33vh;
-  justify-content: center;
-  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
